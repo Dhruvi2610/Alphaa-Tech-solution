@@ -17,7 +17,90 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
 </head>
 <body>
+<!-- RIGHT-SLIDE POPUP -->
+<div id="right-popup">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <h4>Welcome to Alphaa Tech Solution</h4>
+    <p>How may we assist you today?</p>
+    <a href="tel:9930385749" class="btn-primary">Contact Us</a>
+  </div>
+</div>
 
+<!-- CSS -->
+<style>
+#right-popup {
+  position: fixed;
+  top: 20%;
+  right: -320px; /* hidden initially */
+  width: 280px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  z-index: 9999;
+  font-family: 'Inter', sans-serif;
+  transition: right 0.5s ease;
+}
+
+#right-popup.active {
+  right: 20px; /* slides in */
+}
+
+.popup-content h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  color: #ff7a00;
+  font-weight: 600;
+}
+
+.popup-content p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.popup-content .btn-primary {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #ff7a00, #ffa64d);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.popup-content .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(255,122,0,0.6);
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #ff7a00;
+}
+</style>
+
+<!-- JS -->
+<script>
+window.addEventListener('load', () => {
+  const popup = document.getElementById('right-popup');
+  const closeBtn = popup.querySelector('.close-btn');
+
+  setTimeout(() => {
+    popup.classList.add('active'); // show popup after 0.8s
+  }, 800);
+
+  closeBtn.addEventListener('click', () => {
+    popup.classList.remove('active'); // close popup
+  });
+});
+</script>
 <!-- NAVBAR -->
 <nav id="navbar">
   <div class="nav-container">
